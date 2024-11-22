@@ -4,7 +4,7 @@ import time
 def fetch_weather_data():
     api_key = "c1c516e025b253a6fe3a33411344342f"
     location = "London"
-    url = f"http://api.openweathermap.org/data/2.5/weather?q={location}&appid={api_key}"
+    url = "http://api.openweathermap.org/data/2.5/weather?q={}&appid={}".format(location, api_key)
 
     while True:
         try:
@@ -13,9 +13,9 @@ def fetch_weather_data():
                 with open('/home/maria_dev/spool/weather.log', 'a') as file:
                     file.write(response.text + "\n")
             else:
-                print(f"Failed to fetch data: {response.status_code}")
+                print "Failed to fetch data: {}".format(response.status_code)
         except Exception as e:
-            print(f"Error fetching weather data: {e}")
+            print "Error fetching weather data: {}".format(e)
 
         time.sleep(60)
 
