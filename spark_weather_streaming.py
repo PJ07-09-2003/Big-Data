@@ -10,9 +10,9 @@ def parse_weather_data(line):
         temp = main.get("temp", None)
         humidity = main.get("humidity", None)
         weather = data.get("weather", [{}])[0].get("description", "No description")
-        return f"Temperature: {temp}, Humidity: {humidity}, Weather: {weather}"
+        return "Temperature: {}, Humidity: {}, Weather: {}".format(temp, humidity, weather)
     except Exception as e:
-        return f"Error parsing data: {e}"
+        return "Error parsing data: {}".format(e)
 
 if __name__ == "__main__":
     sc = SparkContext(appName="StreamingFlumeWeatherData")
