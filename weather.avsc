@@ -1,0 +1,26 @@
+{
+  "type": "record",
+  "name": "WeatherRecord",
+  "fields": [
+    {
+      "name": "city",
+      "type": "string"
+    },
+    {
+      "name": "region",
+      "type": "string"
+    },
+    {
+      "name": "country",
+      "type": "string"
+    },
+    {
+      "name": "temperature",
+      "type": "int"
+    },
+    {
+      "name": "weather",
+      "type": "string"
+    }
+  ]
+}
